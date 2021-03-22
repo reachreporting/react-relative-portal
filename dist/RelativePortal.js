@@ -144,7 +144,8 @@ var RelativePortal = function (_React$Component) {
           right = _props.right,
           fullWidth = _props.fullWidth,
           componentClass = _props.componentClass,
-          props = _objectWithoutProperties(_props, ['component', 'top', 'left', 'right', 'fullWidth', 'componentClass']);
+          zIndex = _props.zIndex,
+          props = _objectWithoutProperties(_props, ['component', 'top', 'left', 'right', 'fullWidth', 'componentClass', 'zIndex']);
 
       var fromLeftOrRight = right !== undefined ? { right: this.state.right + right } : { left: this.state.left + left };
 
@@ -166,7 +167,8 @@ var RelativePortal = function (_React$Component) {
             {
               style: _extends({
                 position: 'absolute',
-                top: this.state.top + top
+                top: this.state.top + top,
+                zIndex: zIndex
               }, horizontalPosition)
             },
             this.props.children
