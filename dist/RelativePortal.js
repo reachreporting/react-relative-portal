@@ -125,7 +125,7 @@ var RelativePortal = function (_React$Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
-      this.handleScroll();
+      // this.handleScroll();
     }
   }, {
     key: 'componentWillUnmount',

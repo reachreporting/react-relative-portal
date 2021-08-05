@@ -112,7 +112,7 @@ export default class RelativePortal extends React.Component {
   }
 
   componentDidUpdate() {
-    this.handleScroll();
+    // this.handleScroll();
   }
 
   componentWillUnmount() {
