@@ -106,7 +106,7 @@ var RelativePortal = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      this.handleScroll = function () {
+      this.handleScroll = (function () {
         if (_this2.element) {
           var rect = _this2.element.getBoundingClientRect();
           var pageOffset = getPageOffset();
@@ -118,9 +118,10 @@ var RelativePortal = function (_React$Component) {
             _this2.setState({ left: left, top: top, right: right });
           }
         }
-      };
+      }).bind(this);
       this.unsubscribe = subscribe(this.handleScroll);
       this.handleScroll();
+      window.addEventListener('scroll', this.handleScroll);
     }
   }, {
     key: 'componentDidUpdate',
@@ -131,6 +132,7 @@ var RelativePortal = function (_React$Component) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       this.unsubscribe();
+      window.removeEventListener('scroll', this.handleScroll)
     }
   }, {
     key: 'render',
